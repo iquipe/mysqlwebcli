@@ -1,4 +1,4 @@
-# mysqlwebcli
+# MySQL WebCLI
 
 **Mysql WebCLI** is a web-based command-line interface for MySQL databases. It lets you run SQL queries from a web browser, giving you a terminal-like experience without needing a native desktop client.
 
