@@ -1,0 +1,145 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevents unwanted scrollbars on the main page */
+}
+
+body {
+    background-color: #000;
+    color: #00ff00; /* Classic green text on black */
+    font-family: 'Consolas', 'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dos-container {
+    width: 95%; /* Fits the browser window */
+    height: 95%; /* Fits the browser window */
+    border: none; /* No border for a cleaner look */
+    padding: 10px;
+    box-shadow: none; /* No box shadow */
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+}
+
+.cli-output {
+    flex-grow: 1; /* Makes this section fill all available vertical space */
+    overflow-y: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    margin-bottom: 5px;
+    padding-right: 15px;
+    border: none; /* No border for the output area */
+    scrollbar-color: #00ff00 #000;
+    scrollbar-width: thin;
+}
+
+.cli-output pre {
+    margin: 0;
+    padding-left: 2px;
+}
+
+.cli-input-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding-top: 5px;
+}
+
+.cli-input-container pre {
+    margin: 0;
+    color: #00ff00;
+    font-weight: bold;
+}
+
+#command-input {
+    flex-grow: 1;
+    background-color: transparent;
+    border: none;
+    color: #00ff00;
+    font-family: 'Consolas', 'Courier New', Courier, monospace;
+    font-size: 1em;
+    outline: none;
+    padding: 0;
+    caret-color: #00ff00; /* Blinking green cursor */
+}
+
+/* Custom scrollbar for WebKit browsers */
+.cli-output::-webkit-scrollbar {
+    width: 10px;
+}
+
+.cli-output::-webkit-scrollbar-track {
+    background: #000;
+}
+
+.cli-output::-webkit-scrollbar-thumb {
+    background-color: #00ff00;
+    border-radius: 5px;
+    border: 2px solid #000;
+}
+
+pre {
+    font-weight: bold;
+}
+
+/* --- Modal Styles --- */
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top of everything */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.8); /* Black with opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #000;
+  border: 2px solid #00ff00;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  width: 80%; /* Could be more or less, depending on screen size */
+  max-width: 600px;
+  color: #00ff00;
+  font-family: 'Consolas', 'Courier New', Courier, monospace;
+  position: relative;
+}
+
+.modal-content pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  max-height: 400px;
+  overflow-y: auto;
+  border: none; /* Make the pre tag inside the modal also borderless */
+}
+
+/* The Close Button */
+.close-btn {
+  color: #00ff00;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  transition: all 0.2s ease-in-out;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+  color: red;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+p {
+    margin: 0;
+}

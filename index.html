@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shell-style MySQL CLI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dos-container">
+        <div class="cli-output" id="output">
+            <pre>$ Welcome to the MySQL CLI.</pre>
+            <pre>$ Type 'help' to see all available commands.</pre>
+        </div>
+        <div class="cli-input-container">
+            <pre id="cli-prompt">$</pre>
+            <input type="text" id="command-input" autofocus>
+        </div>
+    </div>
+
+    <input type="file" id="sql-file-input" accept=".sql" style="display: none;">
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="close-modal">&times;</span>
+            <pre id="modal-content"></pre>
+            <p style="color:red; text-align:center; font-size:12px;">For security, this file is read-only. Edit on the server directly.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
