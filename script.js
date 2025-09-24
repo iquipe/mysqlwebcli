@@ -41,14 +41,15 @@ Available Commands:
 - q <- [SQL query]  : Execute an SQL query and display results in a table.
 - json<-q<- [SQL query]: Execute an SQL query and display results in JSON format.
 - upload sql        : Upload and execute a .sql file.
-- backup [db_name] | bkp [db_name] : Create and download a backup of a database.
+- bkp [db_name] | backup [db_name] : Create and download a backup of a database.
 
 Note: Commands are case-insensitive.
 
 --- For Support and Feedback ---
 - Visit: https://iquipedigital.com
 - Email: support@iquipedigital.com
-- GitHub: https://github.com/your-repo
+- GitHub: https://github.com/iquipe/mysqlwebcli
+- License: MIT License
 `;
 
     const executeCommand = async () => {
@@ -65,7 +66,7 @@ Note: Commands are case-insensitive.
         let isBackupCommand = false;
 
         const startRegex = /^start\s+(\S+)$/i;
-        const backupRegex = /^(backup|bkp)\s+(\S+)$/i; // Updated regex
+        const backupRegex = /^(bkp|backup)\s+(\S+)$/i;
         const jsonQueryRegex = /^json<-q<-\s*(.+)$/i;
         const sqlQueryRegex = /^q\s*<-\s*(.+)$/i;
         const dropDbRegex = /^(drop|delete|del)\s+(database|db)?\s*(\S+)$/i;
@@ -90,7 +91,7 @@ Note: Commands are case-insensitive.
                 outputDiv.innerHTML += `<pre style="color: red;">Error: Could not retrieve .env file content.</pre>`;
             }
         } else if (backupMatch) {
-            const dbName = backupMatch[2]; // Get the database name from the second capture group
+            const dbName = backupMatch[2];
             endpoint = 'backup.php';
             commandToSend = dbName;
             isBackupCommand = true;
